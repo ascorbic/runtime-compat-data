@@ -9,7 +9,9 @@
   "type": "module",
   "scripts": {
     "build:runtimes": "pnpm run --filter \"*-runtime\" build",
+    "process-tests": "node scripts/process-test-results.js",
     "run-tests": "pnpm run --filter \"*-runtime\" start",
+    "build": "pnpm build:runtimes && pnpm run-tests && pnpm process-tests",
     "lint": "eslint --cache --ext .ts,.js,.mjs,.cjs . && prettier -c src test",
     "lint:fix": "eslint --cache --ext .ts,.js,.mjs,.cjs . --fix && prettier -c src test -w",
     "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags"
@@ -28,5 +30,8 @@
     "unbuild": "^2.0.0",
     "vitest": "^1.3.0"
   },
-  "packageManager": "pnpm@8.12.1"
+  "packageManager": "pnpm@8.12.1",
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

@@ -8,3 +8,4 @@ dist
 *.env*
 .netlify
 src/runtimes/**/data.json 
+packages/data/data.json
