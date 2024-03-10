@@ -6,3 +6,5 @@ dist
 .eslintcache
 *.log*
 *.env*
+.netlify
+src/runtimes/**/data.json 

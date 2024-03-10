@@ -1,0 +1,26 @@
+{
+  "name": "fastly-runtime",
+  "type": "module",
+  "dependencies": {
+    "@fastly/js-compute": "^3.0.0",
+    "unbuild": "^2.0.0"
+  },
+  "scripts": {
+    "build": "unbuild && js-compute-runtime ./dist/handler.mjs ./bin/main.wasm",
+    "start-server": "fastly compute serve --file ./bin/main.wasm",
+    "run": "curl -o data.json http://127.0.0.1:7676",
+    "start": "start-server-and-test start-server http://127.0.0.1:7676 run"
+  },
+  "unbuild": {
+    "entries": [
+      "handler.ts"
+    ],
+    "clean": true,
+    "rollup": {
+      "esbuild": {
+        "platform": "neutral",
+        "target": "esnext"
+      }
+    }
+  }
+}

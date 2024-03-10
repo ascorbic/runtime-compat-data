@@ -1,0 +1,34 @@
+{
+  "name": "workerd-runtime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/handler.mjs",
+  "scripts": {
+    "build": "unbuild",
+    "run": "curl -o data.json http://localhost:8080",
+    "start-server": "workerd serve config.capnp --experimental",
+    "start": "start-server-and-test start-server http://localhost:8080 run"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240222.0",
+    "unbuild": "^2.0.0",
+    "workerd": "^1.20240304.0"
+  },
+  "unbuild": {
+    "entries": [
+      "handler.ts"
+    ],
+    "clean": true,
+    "rollup": {
+      "esbuild": {
+        "platform": "neutral",
+        "target": "esnext"
+      },
+      "inlineDependencies": false
+    }
+  }
+}

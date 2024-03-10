@@ -1,0 +1,14 @@
+{
+  "name": "netlify-runtime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "curl -o data.json http://localhost:8888",
+    "start-server": "BROWSER=none netlify dev",
+    "start": "start-server-and-test start-server http://localhost:8888 run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
