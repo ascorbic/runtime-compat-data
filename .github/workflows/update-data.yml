@@ -1,0 +1,36 @@
+name: "Update Runtime Data"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: corepack enable
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: vx.x.x
+      - name: Download Fastly CLI
+        uses: robinraju/release-downloader@v1.9
+        with:
+          repository: fastly/cli
+          latest: true
+          fileName:  fastly_*_linux_amd64.deb
+      - name: Install Fastly CLI
+        run: sudo dpkg -i fastly_*_linux_amd64.deb && fastly version
+      - run: pnpm install
+      - run: pnpm generate
