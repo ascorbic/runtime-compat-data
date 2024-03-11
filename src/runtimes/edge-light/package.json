@@ -5,7 +5,8 @@
   "main": "dist/run.mjs",
   "scripts": {
     "build": "unbuild",
-    "start": "node dist/run.mjs > data.json"
+    "start": "node dist/run.mjs > data.json",
+    "version": "pnpm list --depth 0 edge-runtime | tail -n 1"
   },
   "type": "module",
   "keywords": [],
