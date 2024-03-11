@@ -1,8 +1,11 @@
 {
   "name": "runtime-compat-data",
   "version": "0.0.2",
-  "description": "",
+  "description": "JavaScript runtime compatibility data",
   "main": "data.json",
+  "scripts": {
+    "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags"
+  },
   "exports": {
     ".": {
       "require": {
@@ -21,6 +24,6 @@
   },
   "types": "require.d.ts",
   "keywords": [],
-  "author": "",
+  "author": "Matt Kane <m@mk.gg>",
   "license": "MIT"
 }
