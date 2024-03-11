@@ -1,5 +1,5 @@
 import type { Request as WorkerRequest } from "@cloudflare/workers-types/experimental";
-import { type TestConfig, runTests } from "../../shared/test.js";
+import { runTests } from "../../shared/test.js";
 import tests from "../../../data/tests.json" assert { type: "json" };
 
 interface Env {
@@ -13,7 +13,7 @@ export default {
       return new Response(undefined, { status: 200 });
     }
     globalThis.eval = env.unsafe.eval.bind(env.unsafe);
-    const data = await runTests(tests as TestConfig);
+    const data = await runTests(tests);
     return new Response(JSON.stringify(data, undefined, 2));
   },
 };

@@ -90,6 +90,12 @@ importers:
         specifier: ^1.20240304.0
         version: 1.20240304.0
 
+  test:
+    dependencies:
+      runtime-compat-data:
+        specifier: workspace:^
+        version: link:../packages/data
+
 packages:
 
   /@aashutoshrathi/word-wrap@1.2.6:
