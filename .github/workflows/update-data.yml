@@ -48,8 +48,8 @@ jobs:
           add-paths: |
             src/runtimes/*/data.json
             packages/data/data.json
-          title: "Update runtime compat data"
+          title: "fix: update runtime compat data"
           body: |
             Updates the runtime compat data.
-            Versions: ${{ steps.get-versions.outputs.versions }}
+            Runtime versions: ${{ steps.get-versions.outputs.versions }}
           base: main
