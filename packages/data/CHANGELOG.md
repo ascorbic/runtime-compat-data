@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.3
+
+[compare changes](https://github.com/ascorbic/runtime-compat-data/compare/v0.0.2...v0.0.3)
+
+### 🩹 Fixes
+
+- Fix types ([#11](https://github.com/ascorbic/runtime-compat-data/pull/11))
+
+### 🏡 Chore
+
+- Update readme and publish script ([#10](https://github.com/ascorbic/runtime-compat-data/pull/10))
+- Fix publish script ([#12](https://github.com/ascorbic/runtime-compat-data/pull/12))
+
+### ❤️ Contributors
+
+- Matt Kane <ascorbic@gmail.com>
+
 ## v0.0.2
 
 
