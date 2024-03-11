@@ -2,9 +2,6 @@
   "name": "runtime-compat-data",
   "version": "0.0.1",
   "description": "",
-  "dependencies": {
-    "@mdn/browser-compat-data": "^5.5.14"
-  },
   "main": "data.json",
   "exports": {
     ".": {

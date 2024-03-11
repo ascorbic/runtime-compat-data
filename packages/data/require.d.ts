@@ -1,5 +1,5 @@
-import { CompatData } from "@mdn/browser-compat-data";
-export * from "@mdn/browser-compat-data";
+import { CompatData } from "./types";
+export * from "./types";
 
 declare const data: CompatData;
 export default data;
