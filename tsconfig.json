@@ -11,6 +11,8 @@
     "noEmit": true
   },
   "include": [
-    "src"
+    "src",
+    "packages",
+    "test"
   ],
 }

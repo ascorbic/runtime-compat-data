@@ -14,7 +14,8 @@
     "generate:run": "pnpm run --filter \"*-runtime\" start",
     "lint": "eslint --cache --ext .ts,.js,.mjs,.cjs . && prettier -c src test",
     "lint:fix": "eslint --cache --ext .ts,.js,.mjs,.cjs . --fix && prettier -c src test -w",
-    "release": "pnpm run --filter runtime-compat-data release"
+    "release": "pnpm test && pnpm run --filter runtime-compat-data release",
+    "test": "vitest test"
   },
   "devDependencies": {
     "@mdn/browser-compat-data": "^5.5.14",

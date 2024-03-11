@@ -1,5 +1,5 @@
 import Tests from "../../lib/tests.ts";
-import type { Resources, Test, TestResult } from "../../lib/types.ts";
+import type { Test, TestResult } from "../../lib/types.ts";
 // @ts-ignore
 import setup from "../../lib/harness.js";
 
@@ -11,7 +11,10 @@ declare global {
   };
 }
 
-export type TestConfig = Record<string, Test> & { __resources: Resources };
+export interface TestConfig {
+  __resources: unknown;
+  [name: `${string}.${string}`]: Test;
+}
 
 export function runTests(
   tests: TestConfig,
