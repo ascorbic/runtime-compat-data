@@ -38,6 +38,16 @@ jobs:
       - name: Install Fastly CLI
         run: sudo dpkg -i fastly_*_linux_amd64.deb && fastly version
       - run: pnpm install
+      - name: Get browser tests
+        uses: actions/checkout@v4
+        with:
+          repository: openwebdocs/mdn-bcd-collector
+          path: .bcd
+      - run: npm install --ignore-scripts
+        working-directory: .bcd
+      - run: npm run build
+        working-directory: .bcd
+      - run: cp .bcd/tests.json data/tests.json
       - run: pnpm generate
       - name: Get runtime versions
         id: get-versions
@@ -48,6 +58,7 @@ jobs:
           add-paths: |
             src/runtimes/*/data.json
             packages/data/data.json
+            data/tests.json
           title: "fix: update runtime compat data"
           body: |
             Updates the runtime compat data.
