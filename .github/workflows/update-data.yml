@@ -10,7 +10,8 @@ on:
   pull_request:
     paths: 
     - .github/workflows/update-data.yml
-
+permissions:
+  pull-requests: write
 jobs:
   update:
     runs-on: ubuntu-latest
