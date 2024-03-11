@@ -5,11 +5,11 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 12 * * *'
+    - cron: "0 12 * * *"
   workflow_dispatch:
   pull_request:
-    paths: 
-    - .github/workflows/update-data.yml
+    paths:
+      - .github/workflows/update-data.yml
 permissions:
   pull-requests: write
   contents: write
@@ -34,11 +34,23 @@ jobs:
         with:
           repository: fastly/cli
           latest: true
-          fileName:  fastly_*_linux_amd64.deb
+          fileName: fastly_*_linux_amd64.deb
       - name: Install Fastly CLI
         run: sudo dpkg -i fastly_*_linux_amd64.deb && fastly version
       - run: pnpm install
-      - run: pnpm generate
+      - name: Get browser tests
+        uses: actions/checkout@v4
+        with:
+          repository: openwebdocs/mdn-bcd-collector
+          path: .bcd
+      - run: npm install --ignore-scripts
+        working-directory: .bcd
+      - run: npm run build
+        working-directory: .bcd
+      - run: |
+          cp .bcd/tests.json data/tests.json
+          pnpm prettier data -w
+          pnpm generate
       - name: Get runtime versions
         id: get-versions
         run: scripts/version.sh >> "$GITHUB_OUTPUT"
@@ -48,6 +60,7 @@ jobs:
           add-paths: |
             src/runtimes/*/data.json
             packages/data/data.json
+            data/tests.json
           title: "fix: update runtime compat data"
           body: |
             Updates the runtime compat data.
