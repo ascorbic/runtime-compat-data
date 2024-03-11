@@ -34,3 +34,12 @@ jobs:
         run: sudo dpkg -i fastly_*_linux_amd64.deb && fastly version
       - run: pnpm install
       - run: pnpm generate
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          add-paths: |
+            src/runtimes/*/data.json
+            packages/data/data.json
+          title: "Update runtime compat data"
+          body: |
+            Updates the runtime compat data
