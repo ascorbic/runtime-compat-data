@@ -14,7 +14,7 @@
     "generate:run": "pnpm run --filter \"*-runtime\" start",
     "lint": "eslint --cache --ext .ts,.js,.mjs,.cjs . && prettier -c src test",
     "lint:fix": "eslint --cache --ext .ts,.js,.mjs,.cjs . --fix && prettier -c src test -w",
-    "release": "pnpm test && pnpm run --filter runtime-compat-data release",
+    "release": "vitest run test && pnpm run --filter runtime-compat-data release",
     "test": "vitest test"
   },
   "devDependencies": {
