@@ -81,21 +81,6 @@ const { default: data } = await import(
 );
 ```
 
-## Development
-
-- Clone this repository
-- Install latest LTS version of [Node.js](https://nodejs.org/en/)
-- Install [Bun](https://bun.sh/)
-- Install [Fastly CLI](https://www.fastly.com/documentation/reference/tools/cli/)
-- Install [Netlify CLI](https://docs.netlify.com/cli/get-started/)
-- Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable`
-- Install dependencies using `pnpm install`
-- Generate the data using `pnpm run generate`
-
-## Contributing
-
-If you want to add a new runtime, please open an issue to discuss it first. Runtimes are added in `src/runtimes`.
-
 ## License
 
 Made with 💛

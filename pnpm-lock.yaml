@@ -45,11 +45,7 @@ importers:
         specifier: ^1.3.1
         version: 1.3.1(@types/node@20.11.25)
 
-  packages/data:
-    dependencies:
-      '@mdn/browser-compat-data':
-        specifier: ^5.5.14
-        version: 5.5.14
+  packages/data: {}
 
   src/runtimes/bun: {}
 
@@ -955,6 +951,7 @@ packages:
 
   /@mdn/browser-compat-data@5.5.14:
     resolution: {integrity: sha512-K7e35i4XtNWpiOr+aPiy3UccAhFop0HsfVz9RSzlcgaaHb2aD/nN0J3uPPLedyTokMiebxN0gxkL/WXpzNQuKg==}
+    dev: true
 
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
