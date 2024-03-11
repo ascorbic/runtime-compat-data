@@ -41,5 +41,5 @@ for (const feature of union) {
 
 await writeFile(
   new URL("../packages/data/data.json", import.meta.url),
-  JSON.stringify(compat, undefined, 2),
+  JSON.stringify(compat),
 );
