@@ -20203,7 +20203,63 @@
     "exposure": ["Window"]
   },
   "api.MediaSession.setActionHandler": {
-    "code": "(function () {\n  var instance = navigator.mediaSession;\n  return !!instance && \"setActionHandler\" in instance;\n})();\n",
+    "code": "(function () {\n  var instance = navigator.mediaSession;\n  function setActionHandler(type) {\n    if (!(\"setActionHandler\" in instance)) {\n      return {\n        result: false,\n        message: \"MediaSession.setActionHandler is not defined\",\n      };\n    }\n    try {\n      instance.setActionHandler(type, null);\n      return true;\n    } catch (e) {\n      if (e instanceof TypeError) {\n        return { result: false, message: e.message };\n      }\n      return e;\n    }\n  }\n  return !!instance && \"setActionHandler\" in instance;\n})();\n",
+    "exposure": ["Window"]
+  },
+  "api.MediaSession.setActionHandler.hangup_type": {
+    "code": "(function () {\n  var instance = navigator.mediaSession;\n  function setActionHandler(type) {\n    if (!(\"setActionHandler\" in instance)) {\n      return {\n        result: false,\n        message: \"MediaSession.setActionHandler is not defined\",\n      };\n    }\n    try {\n      instance.setActionHandler(type, null);\n      return true;\n    } catch (e) {\n      if (e instanceof TypeError) {\n        return { result: false, message: e.message };\n      }\n      return e;\n    }\n  }\n  return setActionHandler(\"hangup\");\n})();\n",
+    "exposure": ["Window"]
+  },
+  "api.MediaSession.setActionHandler.nextslide_type": {
+    "code": "(function () {\n  var instance = navigator.mediaSession;\n  function setActionHandler(type) {\n    if (!(\"setActionHandler\" in instance)) {\n      return {\n        result: false,\n        message: \"MediaSession.setActionHandler is not defined\",\n      };\n    }\n    try {\n      instance.setActionHandler(type, null);\n      return true;\n    } catch (e) {\n      if (e instanceof TypeError) {\n        return { result: false, message: e.message };\n      }\n      return e;\n    }\n  }\n  return setActionHandler(\"nextslide\");\n})();\n",
+    "exposure": ["Window"]
+  },
+  "api.MediaSession.setActionHandler.nexttrack_type": {
+    "code": "(function () {\n  var instance = navigator.mediaSession;\n  function setActionHandler(type) {\n    if (!(\"setActionHandler\" in instance)) {\n      return {\n        result: false,\n        message: \"MediaSession.setActionHandler is not defined\",\n      };\n    }\n    try {\n      instance.setActionHandler(type, null);\n      return true;\n    } catch (e) {\n      if (e instanceof TypeError) {\n        return { result: false, message: e.message };\n      }\n      return e;\n    }\n  }\n  return setActionHandler(\"nexttrack\");\n})();\n",
+    "exposure": ["Window"]
+  },
+  "api.MediaSession.setActionHandler.pause_type": {
+    "code": "(function () {\n  var instance = navigator.mediaSession;\n  function setActionHandler(type) {\n    if (!(\"setActionHandler\" in instance)) {\n      return {\n        result: false,\n        message: \"MediaSession.setActionHandler is not defined\",\n      };\n    }\n    try {\n      instance.setActionHandler(type, null);\n      return true;\n    } catch (e) {\n      if (e instanceof TypeError) {\n        return { result: false, message: e.message };\n      }\n      return e;\n    }\n  }\n  return setActionHandler(\"pause\");\n})();\n",
+    "exposure": ["Window"]
+  },
+  "api.MediaSession.setActionHandler.play_type": {
+    "code": "(function () {\n  var instance = navigator.mediaSession;\n  function setActionHandler(type) {\n    if (!(\"setActionHandler\" in instance)) {\n      return {\n        result: false,\n        message: \"MediaSession.setActionHandler is not defined\",\n      };\n    }\n    try {\n      instance.setActionHandler(type, null);\n      return true;\n    } catch (e) {\n      if (e instanceof TypeError) {\n        return { result: false, message: e.message };\n      }\n      return e;\n    }\n  }\n  return setActionHandler(\"play\");\n})();\n",
+    "exposure": ["Window"]
+  },
+  "api.MediaSession.setActionHandler.previousslide_type": {
+    "code": "(function () {\n  var instance = navigator.mediaSession;\n  function setActionHandler(type) {\n    if (!(\"setActionHandler\" in instance)) {\n      return {\n        result: false,\n        message: \"MediaSession.setActionHandler is not defined\",\n      };\n    }\n    try {\n      instance.setActionHandler(type, null);\n      return true;\n    } catch (e) {\n      if (e instanceof TypeError) {\n        return { result: false, message: e.message };\n      }\n      return e;\n    }\n  }\n  return setActionHandler(\"previousslide\");\n})();\n",
+    "exposure": ["Window"]
+  },
+  "api.MediaSession.setActionHandler.previoustrack_type": {
+    "code": "(function () {\n  var instance = navigator.mediaSession;\n  function setActionHandler(type) {\n    if (!(\"setActionHandler\" in instance)) {\n      return {\n        result: false,\n        message: \"MediaSession.setActionHandler is not defined\",\n      };\n    }\n    try {\n      instance.setActionHandler(type, null);\n      return true;\n    } catch (e) {\n      if (e instanceof TypeError) {\n        return { result: false, message: e.message };\n      }\n      return e;\n    }\n  }\n  return setActionHandler(\"previoustrack\");\n})();\n",
+    "exposure": ["Window"]
+  },
+  "api.MediaSession.setActionHandler.seekbackward_type": {
+    "code": "(function () {\n  var instance = navigator.mediaSession;\n  function setActionHandler(type) {\n    if (!(\"setActionHandler\" in instance)) {\n      return {\n        result: false,\n        message: \"MediaSession.setActionHandler is not defined\",\n      };\n    }\n    try {\n      instance.setActionHandler(type, null);\n      return true;\n    } catch (e) {\n      if (e instanceof TypeError) {\n        return { result: false, message: e.message };\n      }\n      return e;\n    }\n  }\n  return setActionHandler(\"seekbackward\");\n})();\n",
+    "exposure": ["Window"]
+  },
+  "api.MediaSession.setActionHandler.seekforward_type": {
+    "code": "(function () {\n  var instance = navigator.mediaSession;\n  function setActionHandler(type) {\n    if (!(\"setActionHandler\" in instance)) {\n      return {\n        result: false,\n        message: \"MediaSession.setActionHandler is not defined\",\n      };\n    }\n    try {\n      instance.setActionHandler(type, null);\n      return true;\n    } catch (e) {\n      if (e instanceof TypeError) {\n        return { result: false, message: e.message };\n      }\n      return e;\n    }\n  }\n  return setActionHandler(\"seekforward\");\n})();\n",
+    "exposure": ["Window"]
+  },
+  "api.MediaSession.setActionHandler.seekto_type": {
+    "code": "(function () {\n  var instance = navigator.mediaSession;\n  function setActionHandler(type) {\n    if (!(\"setActionHandler\" in instance)) {\n      return {\n        result: false,\n        message: \"MediaSession.setActionHandler is not defined\",\n      };\n    }\n    try {\n      instance.setActionHandler(type, null);\n      return true;\n    } catch (e) {\n      if (e instanceof TypeError) {\n        return { result: false, message: e.message };\n      }\n      return e;\n    }\n  }\n  return setActionHandler(\"seekto\");\n})();\n",
+    "exposure": ["Window"]
+  },
+  "api.MediaSession.setActionHandler.skipad_type": {
+    "code": "(function () {\n  var instance = navigator.mediaSession;\n  function setActionHandler(type) {\n    if (!(\"setActionHandler\" in instance)) {\n      return {\n        result: false,\n        message: \"MediaSession.setActionHandler is not defined\",\n      };\n    }\n    try {\n      instance.setActionHandler(type, null);\n      return true;\n    } catch (e) {\n      if (e instanceof TypeError) {\n        return { result: false, message: e.message };\n      }\n      return e;\n    }\n  }\n  return setActionHandler(\"skipad\");\n})();\n",
+    "exposure": ["Window"]
+  },
+  "api.MediaSession.setActionHandler.stop_type": {
+    "code": "(function () {\n  var instance = navigator.mediaSession;\n  function setActionHandler(type) {\n    if (!(\"setActionHandler\" in instance)) {\n      return {\n        result: false,\n        message: \"MediaSession.setActionHandler is not defined\",\n      };\n    }\n    try {\n      instance.setActionHandler(type, null);\n      return true;\n    } catch (e) {\n      if (e instanceof TypeError) {\n        return { result: false, message: e.message };\n      }\n      return e;\n    }\n  }\n  return setActionHandler(\"stop\");\n})();\n",
+    "exposure": ["Window"]
+  },
+  "api.MediaSession.setActionHandler.togglecamera_type": {
+    "code": "(function () {\n  var instance = navigator.mediaSession;\n  function setActionHandler(type) {\n    if (!(\"setActionHandler\" in instance)) {\n      return {\n        result: false,\n        message: \"MediaSession.setActionHandler is not defined\",\n      };\n    }\n    try {\n      instance.setActionHandler(type, null);\n      return true;\n    } catch (e) {\n      if (e instanceof TypeError) {\n        return { result: false, message: e.message };\n      }\n      return e;\n    }\n  }\n  return setActionHandler(\"togglecamera\");\n})();\n",
+    "exposure": ["Window"]
+  },
+  "api.MediaSession.setActionHandler.togglemicrophone_type": {
+    "code": "(function () {\n  var instance = navigator.mediaSession;\n  function setActionHandler(type) {\n    if (!(\"setActionHandler\" in instance)) {\n      return {\n        result: false,\n        message: \"MediaSession.setActionHandler is not defined\",\n      };\n    }\n    try {\n      instance.setActionHandler(type, null);\n      return true;\n    } catch (e) {\n      if (e instanceof TypeError) {\n        return { result: false, message: e.message };\n      }\n      return e;\n    }\n  }\n  return setActionHandler(\"togglemicrophone\");\n})();\n",
     "exposure": ["Window"]
   },
   "api.MediaSession.setCameraActive": {
@@ -24921,23 +24977,103 @@
     "resources": ["audioContext"]
   },
   "api.Permissions": {
-    "code": "\"Permissions\" in self",
+    "code": "(function () {\n  var instance = navigator.permissions;\n  return !!instance;\n})();\n",
     "exposure": ["Window", "Worker"]
   },
   "api.Permissions.query": {
-    "code": "\"Permissions\" in self && \"query\" in Permissions.prototype",
+    "code": "(function () {\n  var instance = navigator.permissions;\n  return !!instance && \"query\" in instance;\n})();\n",
     "exposure": ["Window", "Worker"]
   },
   "api.Permissions.request": {
-    "code": "\"Permissions\" in self && \"request\" in Permissions.prototype",
+    "code": "(function () {\n  var instance = navigator.permissions;\n  return !!instance && \"request\" in instance;\n})();\n",
     "exposure": ["Window", "Worker"]
   },
   "api.Permissions.requestAll": {
-    "code": "\"Permissions\" in self && \"requestAll\" in Permissions.prototype",
+    "code": "(function () {\n  var instance = navigator.permissions;\n  return !!instance && \"requestAll\" in instance;\n})();\n",
     "exposure": ["Window", "Worker"]
   },
   "api.Permissions.revoke": {
-    "code": "\"Permissions\" in self && \"revoke\" in Permissions.prototype",
+    "code": "(function () {\n  var instance = navigator.permissions;\n  return !!instance && \"revoke\" in instance;\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_accelerometer": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"accelerometer\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_accessibility-events": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"accessibility-events\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_ambient-light-sensor": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"ambient-light-sensor\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_background-sync": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"background-sync\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_camera": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"camera\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_clipboard-read": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"clipboard-read\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_clipboard-write": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"clipboard-write\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_geolocation": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"geolocation\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_gyroscope": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"gyroscope\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_local-fonts": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"local-fonts\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_magnetometer": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"magnetometer\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_microphone": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"microphone\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_midi": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"midi\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_notifications": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"notifications\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_payment-handler": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"payment-handler\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_persistent-storage": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"persistent-storage\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_push": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"push\", userVisibleOnly: true })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_storage-access": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"storage-access\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_top-level-storage-access": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"top-level-storage-access\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
+  "api.Permissions.permission_window-management": {
+    "code": "(function () {\n  var instance = navigator.permissions;\n  if (!(instance && \"query\" in instance)) {\n    return { result: false, message: \"Permissions.query is not defined\" };\n  }\n  return instance\n    .query({ name: \"window-management\" })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
     "exposure": ["Window", "Worker"]
   },
   "api.PermissionsPolicy": {
