@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/ascorbic/runtime-compat-data/compare/v0.0.3...v0.0.4)
+
+### 🩹 Fixes
+
+- Update licence and docs ([#13](https://github.com/ascorbic/runtime-compat-data/pull/13))
+- Update runtime compat data ([#14](https://github.com/ascorbic/runtime-compat-data/pull/14))
+
+### 🏡 Chore
+
+- **release:** V0.0.3 ([d3743f4](https://github.com/ascorbic/runtime-compat-data/commit/d3743f4))
+
+### ❤️ Contributors
+
+- Matt Kane <ascorbic@gmail.com>
+- Ascorbic <ascorbic@gmail.com>
+
 ## v0.0.3
 
 [compare changes](https://github.com/ascorbic/runtime-compat-data/compare/v0.0.2...v0.0.3)
