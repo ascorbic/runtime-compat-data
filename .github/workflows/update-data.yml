@@ -66,6 +66,7 @@ jobs:
             packages/runtime-compat-data/data.json
             data/tests.json
           title: "fix: update runtime compat data"
+          commit-message: "fix: update runtime compat data"
           body: |
             Updates the runtime compat data.
             Runtime versions: ${{ steps.get-versions.outputs.versions }}
