@@ -51,6 +51,7 @@ jobs:
           cp .bcd/tests.json data/tests.json
           pnpm prettier data -w
           pnpm generate
+          pnpm test
       - name: Get runtime versions
         id: get-versions
         run: scripts/version.sh >> "$GITHUB_OUTPUT"
