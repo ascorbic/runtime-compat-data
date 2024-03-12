@@ -1,6 +1,25 @@
 # Changelog
 
 
+## v0.0.5
+
+[compare changes](https://github.com/ascorbic/runtime-compat-data/compare/v0.0.4...v0.0.5)
+
+### 🩹 Fixes
+
+- Define global "self" ([#15](https://github.com/ascorbic/runtime-compat-data/pull/15))
+- Update runtime compat data ([#17](https://github.com/ascorbic/runtime-compat-data/pull/17))
+
+### 🏡 Chore
+
+- **release:** V0.0.4 ([3961446](https://github.com/ascorbic/runtime-compat-data/commit/3961446))
+- Add support for DEBUG mode ([#16](https://github.com/ascorbic/runtime-compat-data/pull/16))
+
+### ❤️ Contributors
+
+- Matt Kane <ascorbic@gmail.com>
+- Ascorbic <ascorbic@gmail.com>
+
 ## v0.0.4
 
 [compare changes](https://github.com/ascorbic/runtime-compat-data/compare/v0.0.3...v0.0.4)
