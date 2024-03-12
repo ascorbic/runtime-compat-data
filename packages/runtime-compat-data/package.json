@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://github.com/ascorbic/runtime-compat-data.git"
   },
+  "homepage": "https://github.com/ascorbic/runtime-compat-data",
   "main": "data.json",
   "type": "commonjs",
   "scripts": {
@@ -28,7 +29,10 @@
     }
   },
   "types": "require.d.ts",
-  "keywords": [],
+  "keywords": [
+    "wintercg",
+    "bcd"
+  ],
   "author": "Matt Kane <m@mk.gg>",
-  "license": "MIT"
+  "license": "CC0-1.0"
 }

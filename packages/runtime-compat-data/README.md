@@ -6,19 +6,19 @@
 <!-- [![bundle][bundle-src]][bundle-href] -->
 <!-- [![Codecov][codecov-src]][codecov-href] -->
 
-This project provides machine-readable data on support for Web APIs and JavaScript features across non-browser JavaScript runtimes. The data format is the same as MDN's [`browser-compat-data`](https://github.com/mdn/browser-compat-data/), and it uses the runtime tests from [`mdn-bcd-collector`](https://github.com/openwebdocs/mdn-bcd-collector/).
+This project provides machine-readable data on support for Web APIs and JavaScript features across non-browser JavaScript runtimes. The data format is the same as MDN's [`browser-compat-data`](https://github.com/mdn/browser-compat-data/), and it uses the runtime tests from [`mdn-bcd-collector`](https://github.com/openwebdocs/mdn-bcd-collector/). It includes most runtimes that are members of the [WinterCG](https://wintercg.org/) project, and can be used to track the goal of improving web-interoperability across different runtimes.
 
 ## Supported runtimes
 
-Currently this tracks the following runtimes, along with their [WinterCG runtime key](https://runtime-keys.proposal.wintercg.org/):
+Currently this tracks the following JavaScript runtimes (shown with their [WinterCG runtime key](https://runtime-keys.proposal.wintercg.org/)):
 
 - [Bun](https://bun.sh/) (`bun`)
 - [Deno](https://deno.land/) (`deno`)
-- [Vercel Edge Runtime](https://edge-runtime.vercel.app/) (`edge-light`)
-- [Fastly JS Compute Runtime](https://github.com/fastly/js-compute-runtime) (`fastly`)
-- [Netlify Edge Functions](https://docs.netlify.com/edge-functions/overview/) (`netlify`)
+- Vercel [Edge Runtime](https://edge-runtime.vercel.app/) (`edge-light`)
+- Fastly [JS Compute Runtime](https://github.com/fastly/js-compute-runtime) (`fastly`)
+- Netlify [Edge Functions](https://docs.netlify.com/edge-functions/overview/) (`netlify`)
 - [Node.js](https://nodejs.org/) (`node`)
-- [Cloudflare workerd](https://github.com/cloudflare/workerd) (`workerd`)
+- Cloudflare [workerd](https://github.com/cloudflare/workerd) (`workerd`)
 
 ## Usage
 
@@ -81,7 +81,7 @@ const { default: data } = await import(
 
 ## Data format
 
-The data follows the same format as MDN's [`browser-compat-data`](https://github.com/mdn/browser-compat-data), but only includes the `javascript` and `api` keys. Instead of the browser keys in MDN's data, this project uses the runtime keys from the [WinterCG runtime key proposal](https://runtime-keys.proposal.wintercg.org/). The data doesn't currenty track versions where the feature was added, and just includes a boolean for whether the feature is supported in the current runtime.
+The data follows the same format as MDN's [`browser-compat-data`](https://github.com/mdn/browser-compat-data), but only includes the `javascript` and `api` keys. Instead of the browser keys in MDN's data, this project uses the runtime keys from the [WinterCG runtime key proposal](https://runtime-keys.proposal.wintercg.org/). The data doesn't currently track versions where the feature was added, and just includes a boolean for whether the feature is supported in the current runtime.
 
 Example data:
 
@@ -113,11 +113,24 @@ Example data:
 }
 ```
 
+The data is heirarchical, with the feature at the top level and then properties nested below it. Each level has a `__compat` key that contains the compatibility data for that item. The `support` key in that contains the compatibility data for each runtime.
+
+For example, the `TextEncoder` key has this structure:
+
+- `TextEncoder`
+  - `__compat` (shows compatibility for the feature itself)
+  - `TextEncoder`
+    - `__compat` (shows compatibility for the `TextEncoder` object)
+  - `encodeInto`
+    - `__compat` (shows compatibility for the `encodeInto` method)
+  - `encode`
+    - `__compat` (shows compatibility for the `encode` method)
+
 ## License
 
-Made with 💛
+Created by [Matt Kane](https://mk.gg). Includes data from MDN.
 
-Published under [MIT License](./LICENSE).
+Published under the [CC0](./LICENSE) (no rights reserved).
 
 <!-- Badges -->
 
