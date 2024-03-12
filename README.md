@@ -147,6 +147,8 @@ The tests can be run locally, but the actual data generation process is run nigh
 - Install dependencies using `pnpm install`
 - Generate the data using `pnpm run generate`
 
+If you want to run the tests for an individual runtime, run `pnpm start` in the `src/runtimes/<runtime>` directory. If you set `DEBUG=1` then it will log messages for test failures.
+
 ## Limitations
 
 The tests are only run against the latest stable version of each runtime, so the data only shows whether the feature is supported now. This is because the goal of the project is to track the current state, and not to track historical support. In most cases these runtimes are updated regularly, so this should not be a problem. The exception is Node.js, which is often run using old version. For this you may like to compare the data with the MDN docs, which include support details for old versions of Node.
