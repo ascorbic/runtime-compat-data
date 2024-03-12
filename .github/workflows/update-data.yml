@@ -59,7 +59,7 @@ jobs:
         with:
           add-paths: |
             src/runtimes/*/data.json
-            packages/data/data.json
+            packages/runtime-compat-data/data.json
             data/tests.json
           title: "fix: update runtime compat data"
           body: |

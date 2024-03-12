@@ -40,6 +40,6 @@ for (const feature of union) {
 }
 
 await writeFile(
-  new URL("../packages/data/data.json", import.meta.url),
+  new URL("../packages/runtime-compat-data/data.json", import.meta.url),
   JSON.stringify(compat),
 );
