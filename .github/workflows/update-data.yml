@@ -21,7 +21,7 @@ jobs:
       - run: corepack enable
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: latest
           cache: "pnpm"
       - uses: oven-sh/setup-bun@v1
         with:
@@ -43,14 +43,17 @@ jobs:
         with:
           repository: openwebdocs/mdn-bcd-collector
           path: .bcd
-      - run: npm install --ignore-scripts
+      - name: Generate runtime tests
+        run: |
+          npm install --ignore-scripts
+          npm run build
         working-directory: .bcd
-      - run: npm run build
-        working-directory: .bcd
-      - run: |
+      - name: Generate compat data
+        run: |
           cp .bcd/tests.json data/tests.json
           pnpm prettier data -w
           pnpm generate
+          rm -rf .bcd
           pnpm test
       - name: Get runtime versions
         id: get-versions
