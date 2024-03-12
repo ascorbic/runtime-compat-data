@@ -8,8 +8,6 @@ on:
     - cron: "0 12 * * *"
   workflow_dispatch:
   pull_request:
-    paths:
-      - .github/workflows/update-data.yml
 permissions:
   pull-requests: write
   contents: write
@@ -59,6 +57,8 @@ jobs:
         id: get-versions
         run: scripts/version.sh >> "$GITHUB_OUTPUT"
       - name: Create Pull Request
+        # only run when on main branch
+        if: github.ref == 'refs/heads/main'
         uses: peter-evans/create-pull-request@v6
         with:
           add-paths: |

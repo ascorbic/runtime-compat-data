@@ -19,6 +19,7 @@ export interface TestConfig {
 export function runTests(
   tests: TestConfig,
   ignoreApis?: Array<string>,
+  debug = false,
 ): Promise<Array<string>> {
   setup(globalThis);
   const testCases = new Tests({ tests, httpOnly: false });
@@ -31,9 +32,11 @@ export function runTests(
   return new Promise((resolve) =>
     globalThis.bcd.go((done) => {
       const passing: Array<string> = [];
-      for (const { result, name } of done) {
+      for (const { result, name, message } of done) {
         if (result) {
           passing.push(name);
+        } else if (debug && message) {
+          console.error(`${name} failed: ${message}`);
         }
       }
       resolve(passing);
