@@ -22,6 +22,7 @@ const skipKeys = new Set([
   "api.ReadableStream",
   "api.WebSocket",
   "api.ReadableStreamDefaultReader",
+  "api.PerformanceResourceTiming",
   "javascript.builtins.Intl.NumberFormat.NumberFormat.options_parameter",
   "javascript.builtins.Intl.RelativeTimeFormat.RelativeTimeFormat.options_parameter",
 ]);
