@@ -2,7 +2,7 @@
   "name": "fastly-runtime",
   "type": "module",
   "dependencies": {
-    "@fastly/js-compute": "^3.9.1",
+    "@fastly/js-compute": "^3.10.0",
     "unbuild": "^2.0.0"
   },
   "scripts": {
